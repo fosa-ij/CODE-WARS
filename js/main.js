@@ -1,28 +1,18 @@
-// Remove First and Last Character Part Two
+// Sum Arrays
 
-// This is a spin off of my first kata.
-// You are given a string containing a sequence of character sequences separated by commas.
-// Write a function which returns a new string containing the same character sequences except the first and the last ones but this time separated by spaces.
-// If the input string is empty or the removal of the first and last items would cause the resulting string to be empty, return an empty value (represented as a generic value NULL in the examples below).
+// Write a function that takes an array of numbers and returns the sum of the numbers. The numbers can be negative or non-integer. If the array does not contain any numbers then you should return 0.
 
 // Examples
-// "1,2,3"      =>  "2"
-// "1,2,3,4"    =>  "2 3"
-// "1,2,3,4,5"  =>  "2 3 4"
-// ""     =>  NULL
-// "1"    =>  NULL
-// "1,2"  =>  NULL
+// 1.
+// Input: [1, 5.2, 4, 0, -1]
+// Output: 9.2
+// 2.
+// Input: []
+// Output: 0
+// 3.
+// Input: [-2.398]
+// Output: -2.398
 
 // SOLUTION
-function array(str){
-    let strToArr = str.split(',')
-    if (strToArr.length > 2){
-        strToArr.pop()
-        strToArr.shift()
-    let arrToStr = strToArr.join(' ')
-    return arrToStr
-    } else {
-      return null
-    }
-  }
-  console.log(array('1,2,3,4'))
+let sum = numbers => numbers === [] ? 0 : numbers.reduce((acc, curr) => acc + curr, 0)
+console.log(sum([1, 5.2, 4, 0, -1]))
