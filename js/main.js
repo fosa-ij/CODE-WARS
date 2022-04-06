@@ -1,18 +1,32 @@
-// Sum Arrays
+// A wolf in sheep's clothing
 
-// Write a function that takes an array of numbers and returns the sum of the numbers. The numbers can be negative or non-integer. If the array does not contain any numbers then you should return 0.
+// Wolves have been reintroduced to Great Britain. You are a sheep farmer, and are now plagued by wolves which pretend to be sheep. Fortunately, you are good at spotting them.
+// Warn the sheep in front of the wolf that it is about to be eaten. Remember that you are standing at the front of the queue which is at the end of the array:
+// [sheep, sheep, sheep, sheep, sheep, wolf, sheep, sheep]      (YOU ARE HERE AT THE FRONT OF THE QUEUE)
+//    7      6      5      4      3            2      1
+// If the wolf is the closest animal to you, return "Pls go away and stop eating my sheep". Otherwise, return "Oi! Sheep number N! You are about to be eaten by a wolf!" where N is the sheep's position in the queue.
+
+// Note: there will always be exactly one wolf in the array.
 
 // Examples
-// 1.
-// Input: [1, 5.2, 4, 0, -1]
-// Output: 9.2
-// 2.
-// Input: []
-// Output: 0
-// 3.
-// Input: [-2.398]
-// Output: -2.398
+// Input: ["sheep", "sheep", "sheep", "wolf", "sheep"]
+// Output: "Oi! Sheep number 1! You are about to be eaten by a wolf!"
+// Input: ["sheep", "sheep", "wolf"]
+// Output: "Pls go away and stop eating my sheep"
 
 // SOLUTION
-let sum = numbers => numbers === [] ? 0 : numbers.reduce((acc, curr) => acc + curr, 0)
-console.log(sum([1, 5.2, 4, 0, -1]))
+function warnTheSheep(queue) {
+    //Loop through the array and
+      //if the wolf is the last on the array yell ...............
+      //else get the index of the sheep in danger and yell ....................
+    //   let loops = queue.forEach((x,i) => {
+      for (let i = 0; i < 1; i++){
+        if ('wolf' === queue[queue.length -1]){
+          return 'Pls go away and stop eating my sheep'
+        } else {
+          let indexOfSheepInDanger = queue.length - queue.indexOf('wolf') - 1
+           return `Oi! Sheep number ${indexOfSheepInDanger}! You are about to be eaten by a wolf!`
+        }
+      }
+    }
+    console.log(warnTheSheep(["sheep", "sheep", "sheep", "sheep", "sheep", "wolf", "sheep", "sheep"]))
