@@ -1,16 +1,13 @@
-// Take an Arrow to the knee, Functionally
+// Is there a vowel in there?
 
-// Arrow style Functions
-// Come here to practice the Arrow style functions Not much else to say good luck!
-// Details
-// You will be given an array of numbers which can be used using the String.fromCharCode() (JS), Tools.FromCharCode() (C#) method to convert the number to a character. It is recommended to map over the array of numbers and convert each number to the corresponding ascii character.
+// Given an array of numbers, check if any of the numbers are the character codes for lower case vowels (a, e, i, o, u).
+// If they are, change the array value to a string of that vowel.
+// Return the resulting array.
 
-// Examples
-// These are example of how to convert a number to an ascii Character:
-// Javascript => String.fromCharCode(97) // a
-
-// SOLUTION
-var ArrowFunc = function(arr) {
-    return arr.map(x => String.fromCharCode(x)).join(''); //Complete this function
-  }
-  console.log(ArrowFunc([84,101,115,116]))
+// SOLUION
+function isVow(a){
+// 97-a, 101-e, 105-i, 111-o, 117-u
+        let mapped = a.map(x => x === 97 ? 'a' : x === 101 ? 'e' : x === 105 ? 'i' : x === 111 ? 'o' : x === 117 ? 'u' : x)
+        return mapped
+      }
+    console.log(isVow([101,121,110,113,113,103,121,121,101,107,103]))
