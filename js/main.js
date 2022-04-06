@@ -1,32 +1,16 @@
-// A wolf in sheep's clothing
+// UEFA EURO 2016
 
-// Wolves have been reintroduced to Great Britain. You are a sheep farmer, and are now plagued by wolves which pretend to be sheep. Fortunately, you are good at spotting them.
-// Warn the sheep in front of the wolf that it is about to be eaten. Remember that you are standing at the front of the queue which is at the end of the array:
-// [sheep, sheep, sheep, sheep, sheep, wolf, sheep, sheep]      (YOU ARE HERE AT THE FRONT OF THE QUEUE)
-//    7      6      5      4      3            2      1
-// If the wolf is the closest animal to you, return "Pls go away and stop eating my sheep". Otherwise, return "Oi! Sheep number N! You are about to be eaten by a wolf!" where N is the sheep's position in the queue.
+// Finish the uefaEuro2016() function so it return string just like in the examples below:
 
-// Note: there will always be exactly one wolf in the array.
-
-// Examples
-// Input: ["sheep", "sheep", "sheep", "wolf", "sheep"]
-// Output: "Oi! Sheep number 1! You are about to be eaten by a wolf!"
-// Input: ["sheep", "sheep", "wolf"]
-// Output: "Pls go away and stop eating my sheep"
+// uefaEuro2016(['Germany', 'Ukraine'],[2, 0]) // "At match Germany - Ukraine, Germany won!"
+// uefaEuro2016(['Belgium', 'Italy'],[0, 2]) // "At match Belgium - Italy, Italy won!"
+// uefaEuro2016(['Portugal', 'Iceland'],[1, 1]) // "At match Portugal - Iceland, teams played draw."
 
 // SOLUTION
-function warnTheSheep(queue) {
-    //Loop through the array and
-      //if the wolf is the last on the array yell ...............
-      //else get the index of the sheep in danger and yell ....................
-    //   let loops = queue.forEach((x,i) => {
-      for (let i = 0; i < 1; i++){
-        if ('wolf' === queue[queue.length -1]){
-          return 'Pls go away and stop eating my sheep'
-        } else {
-          let indexOfSheepInDanger = queue.length - queue.indexOf('wolf') - 1
-           return `Oi! Sheep number ${indexOfSheepInDanger}! You are about to be eaten by a wolf!`
-        }
-      }
-    }
-    console.log(warnTheSheep(["sheep", "sheep", "sheep", "sheep", "sheep", "wolf", "sheep", "sheep"]))
+let uefaEuro2016 = (teams, scores) =>
+  (scores[0] > scores[1]) ? 
+    `At match ${teams[0]} - ${teams[1]}, ${teams[0]} won!` : 
+  (scores[0] < scores[1]) ?
+    `At match ${teams[0]} - ${teams[1]}, ${teams[1]} won!` : 
+    `At match ${teams[0]} - ${teams[1]}, teams played draw.`
+console.log(uefaEuro2016(['Chelsea', 'Real Madrid'], [3, 1]))
