@@ -1,16 +1,16 @@
-// UEFA EURO 2016
+// Take an Arrow to the knee, Functionally
 
-// Finish the uefaEuro2016() function so it return string just like in the examples below:
+// Arrow style Functions
+// Come here to practice the Arrow style functions Not much else to say good luck!
+// Details
+// You will be given an array of numbers which can be used using the String.fromCharCode() (JS), Tools.FromCharCode() (C#) method to convert the number to a character. It is recommended to map over the array of numbers and convert each number to the corresponding ascii character.
 
-// uefaEuro2016(['Germany', 'Ukraine'],[2, 0]) // "At match Germany - Ukraine, Germany won!"
-// uefaEuro2016(['Belgium', 'Italy'],[0, 2]) // "At match Belgium - Italy, Italy won!"
-// uefaEuro2016(['Portugal', 'Iceland'],[1, 1]) // "At match Portugal - Iceland, teams played draw."
+// Examples
+// These are example of how to convert a number to an ascii Character:
+// Javascript => String.fromCharCode(97) // a
 
 // SOLUTION
-let uefaEuro2016 = (teams, scores) =>
-  (scores[0] > scores[1]) ? 
-    `At match ${teams[0]} - ${teams[1]}, ${teams[0]} won!` : 
-  (scores[0] < scores[1]) ?
-    `At match ${teams[0]} - ${teams[1]}, ${teams[1]} won!` : 
-    `At match ${teams[0]} - ${teams[1]}, teams played draw.`
-console.log(uefaEuro2016(['Chelsea', 'Real Madrid'], [3, 1]))
+var ArrowFunc = function(arr) {
+    return arr.map(x => String.fromCharCode(x)).join(''); //Complete this function
+  }
+  console.log(ArrowFunc([84,101,115,116]))
