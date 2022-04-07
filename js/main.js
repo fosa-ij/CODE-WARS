@@ -1,20 +1,12 @@
-// Grasshopper - Summation
+// The 'if' function
 
-// Summation
-// Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.
+// Create a function called _if which takes 3 arguments: a boolean value bool and 2 functions (which do not take any parameters): func1 and func2
+// When bool is truth-ish, func1 should be called, otherwise call the func2.
 
-// For example:
-// summation(2) -> 3
-// 1 + 2
-// summation(8) -> 36
-// 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8
+// Example:
+// _if(true, function(){console.log("True")}, function(){console.log("false")})
+// // Logs 'True' to the console.
 
 // SOLUTION
-var summation = function (num) {
-    let sum = 1
-    for (let i = 1; i < num; i++){
-          sum += (i + 1)
-    }
-      return sum
-  }
-  console.log(summation(15))
+let _if = (bool, func1 = function(){console.log('fosa says the truth')}, func2 = function(){console.log('fosa is a liar')}) => bool ? func1() : func2()
+console.log(_if(true))
