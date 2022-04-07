@@ -1,11 +1,11 @@
-// You only need one - Beginner
+// Fake Binary
 
-// You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
-// Array can contain numbers or strings. X can be either.
-// Return true if the array contains the value, false if not.
+// Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string.
+// Note: input will never be an empty string
 
 // SOLUTION
-function check(a, x) {
-   return a.includes(x) ? true : false
-  }
-  console.log(check(['t', 'e', 's', 't'], 's'))
+function fakeBin(x){
+    let zeroAndOne = x.split('').map(x => x < 5 ? x = 0 : x = 1).join('')
+    return zeroAndOne
+}
+console.log(fakeBin('45385593107843568'))
