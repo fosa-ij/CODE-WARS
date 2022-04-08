@@ -1,12 +1,16 @@
-// The 'if' function
+// Convert number to reversed array of digits
 
-// Create a function called _if which takes 3 arguments: a boolean value bool and 2 functions (which do not take any parameters): func1 and func2
-// When bool is truth-ish, func1 should be called, otherwise call the func2.
+// Convert number to reversed array of digits
+// Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
 
 // Example:
-// _if(true, function(){console.log("True")}, function(){console.log("false")})
-// // Logs 'True' to the console.
+// 348597 => [7,9,5,8,4,3]
+// 0 => [0]
 
 // SOLUTION
-let _if = (bool, func1 = function(){console.log('fosa says the truth')}, func2 = function(){console.log('fosa is a liar')}) => bool ? func1() : func2()
-console.log(_if(true))
+function digitize(n) {
+    let arr = n.toString().split('').reverse()
+    let mapped = arr.map(x => Number(x))
+    return mapped
+  }
+console.log(digitize(7645210));
