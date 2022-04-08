@@ -1,16 +1,14 @@
-// Convert number to reversed array of digits
+// Invert values
 
-// Convert number to reversed array of digits
-// Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+// Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
 
-// Example:
-// 348597 => [7,9,5,8,4,3]
-// 0 => [0]
+// invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
+// invert([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
+// invert([]) == []
 
-// SOLUTION
-function digitize(n) {
-    let arr = n.toString().split('').reverse()
-    let mapped = arr.map(x => Number(x))
-    return mapped
+// SOLUYION
+function invert(array) {
+    let mapped = array.map(x => x >= 0 ? Number(`-${x}`) : Math.abs(x)) 
+    return mapped 
   }
-console.log(digitize(7645210));
+  console.log(invert([1,-2,3,-4,5,0]))
