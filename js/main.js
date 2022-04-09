@@ -1,14 +1,12 @@
-// Invert values
+// Name Shuffler
 
-// Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+// Write a function that returns a string in which firstname is swapped with last name.
+// nameShuffler('john McClane'); => "McClane john"
 
-// invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
-// invert([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
-// invert([]) == []
-
-// SOLUYION
-function invert(array) {
-    let mapped = array.map(x => x >= 0 ? Number(`-${x}`) : Math.abs(x)) 
-    return mapped 
-  }
-  console.log(invert([1,-2,3,-4,5,0]))
+// SOLUTION
+function nameShuffler(str){
+  //Shuffle It
+  let Shuffler = str.split(' ').reverse().join(' ')
+  return Shuffler
+}
+console.log(nameShuffler('john McClane'))
