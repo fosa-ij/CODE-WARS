@@ -1,17 +1,18 @@
-// Short Long Short
+// How good are you really?
 
-// Given 2 strings, a and b, return a string of the form short+long+short, 
-// with the shorter string on the outside and the longer string on the inside. 
-// The strings will not be the same length, but they may be empty ( zero length ).
-// Hint for R users:
+// There was a test in your class and you passed it. Congratulations!
+// But you're an ambitious person. You want to know if you're better than the average student in your class.
+// You receive an array with your peers' test scores. Now calculate the average and compare your score!
+// Return True if you're better, else False!
 
-// The length of string is not always the same as the number of characters
-// For example: (Input1, Input2) --> output
-// ("1", "22") --> "1221"
-// ("22", "1") --> "1221"
+// Note:
+// Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
 
 // SOLUTION
-function solution(a, b){
-  return a.length > b.length ? (b + a + b) : (a + b + a)
-  }
- console.log(solution('13', '200'))
+function betterThanAverage(classPoints, yourPoints) {
+  classPoints.push(yourPoints)
+  let total = classPoints.reduce((acc, curr) => acc + curr, 0)
+  let avg = total / classPoints.length
+  return yourPoints > avg 
+}
+console.log(betterThanAverage([100, 40, 34, 57, 29, 72, 57, 88], 75))
