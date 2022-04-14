@@ -1,16 +1,17 @@
-// To square(root) or not to square(root)
+// Filter unused digits
 
-// Write a method, that will get an integer array as parameter and will process every number from this array.
-// Return a new array with processing every number of the input-array like this:
-// If the number has an integer square root, take this, otherwise square the number.
+// Given a varying number of integer arguments, return the digits that are not present in any of them.
 
-// Example
-// [4,3,9,7,2,1] -> [2,9,3,49,4,1]
-// Notes
-// The input array will always contain only positive numbers, and will never be empty or null.
+// Example:
+// [12, 34, 56, 78]  =>  "09"
+// [2015, 8, 26]     =>  "3479"
+// Note: the digits in the resulting string should be sorted
 
 // SOLUTION
-function squareOrSquareRoot(array) {
-  return array.map(x => Number.isInteger(Math.sqrt(x)) ? Math.sqrt(x) : Math.pow(x, 2))
+function unusedDigits(...x) {
+  const a = [0,1,2,3,4,5,6,7,8,9]
+  let y = x.join('')
+  let newArr = a.filter(arr => !y.includes(arr))
+  return newArr.join('');
 }
-console.log(squareOrSquareRoot([ 1, 2, 3, 4, 5, 6 ]))
+console.log(unusedDigits(12,34,56,78))
