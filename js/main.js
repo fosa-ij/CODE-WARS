@@ -1,47 +1,22 @@
-// Adding Arrays
+// Powers of 2
 
-// Create a function that takes an array of letters, and combines them into words in a sentence.
+// Complete the function that takes a non-negative integer n as input, and returns a list of all the powers of 2 with the exponent ranging from 0 to n ( inclusive ).
 
-// The array will be formatted as so:
+// Examples
+// n = 0  ==> [1]        # [2^0]
+// n = 1  ==> [1, 2]     # [2^0, 2^1]
+// n = 2  ==> [1, 2, 4]  # [2^0, 2^1, 2^2]
 
-// [['J','L','L','M']
-// ,['u','i','i','a']
-// ,['s','v','f','n']
-// ,['t','e','e','']]
-// The function should combine all the 0th indexed letters to create the word 'just', all the 1st indexed letters to create the word 'live', etc.
-
-// Shorter words will have an empty string in the place once the word has already been mapped out (see the last element in the last element in the array).
-
-// Examples:
-
-// arrAdder([
-// ['J','L','L','M'],
-// ['u','i','i','a'],
-// ['s','v','f','n'],
-// ['t','e','e','']
-// ]) // => "Just Live Life Man"
-
-// arrAdder([ 
-//   [ 'T', 'M', 'i', 't', 'p', 'o', 't', 'c' ],
-//   [ 'h', 'i', 's', 'h', 'o', 'f', 'h', 'e' ],
-//   [ 'e', 't', '', 'e', 'w', '', 'e', 'l' ],
-//   [ '', 'o', '', '', 'e', '', '', 'l' ],
-//   [ '', 'c', '', '', 'r', '', '', '' ],
-//   [ '', 'h', '', '', 'h', '', '', '' ],
-//   [ '', 'o', '', '', 'o', '', '', '' ],
-//   [ '', 'n', '', '', 'u', '', '', '' ],
-//   [ '', 'd', '', '', 's', '', '', '' ],
-//   [ '', 'r', '', '', 'e', '', '', '' ],
-//   [ '', 'i', '', '', '', '', '', '' ],
-//   [ '', 'a', '', '', '', '', '', '' ] ]) // => "The Mitochondria is the powerhouse of the cell"
-
-//   SOLUTION
-function arrAdder(arr) {
-  return arr.reduce((acc,curr) => acc.map((a,b) => a + curr[b])).join(' ')
+// SOLUTION
+function powersOfTwo(n){
+  //take a number "n" return an array of all the numbers from 0 - n
+      let arr = []
+          for (let i = 0; i <= n; i++){
+            arr.push(i)
+          }
+  //square 2 with each of the numners from that array by mapping them
+      let squared = arr.map(x => Math.pow(2, x))
+  //return an array of the results
+  return squared
 }
-console.log(arrAdder([
-['J','L','L','M'],
-['u','i','i','a'],
-['s','v','f','n'],
-['t','e','e','']
-]))
+console.log(powersOfTwo(4))
