@@ -1,22 +1,19 @@
-// Powers of 2
+// Removing Elements
 
-// Complete the function that takes a non-negative integer n as input, and returns a list of all the powers of 2 with the exponent ranging from 0 to n ( inclusive ).
+// Take an array and remove every second element from the array. Always keep the first element and start removing with the next element.
 
-// Examples
-// n = 0  ==> [1]        # [2^0]
-// n = 1  ==> [1, 2]     # [2^0, 2^1]
-// n = 2  ==> [1, 2, 4]  # [2^0, 2^1, 2^2]
+// Example:
+
+// ["Keep", "Remove", "Keep", "Remove", "Keep", ...] --> ["Keep", "Keep", "Keep", ...]
+
+// None of the arrays will be empty, so you don't have to worry about that!
 
 // SOLUTION
-function powersOfTwo(n){
-  //take a number "n" return an array of all the numbers from 0 - n
-      let arr = []
-          for (let i = 0; i <= n; i++){
-            arr.push(i)
-          }
-  //square 2 with each of the numners from that array by mapping them
-      let squared = arr.map(x => Math.pow(2, x))
-  //return an array of the results
-  return squared
+function removeEveryOther(arr){
+  //leave the first element in the array untouched
+  //remove every second element in the array
+      //filter through and return the even index elements
+    let mapped = arr.filter((x, i) => i % 2 === 0)
+    return mapped
 }
-console.log(powersOfTwo(4))
+console.log(removeEveryOther(['Hello', 'Goodbye', 'Hello Again']))
