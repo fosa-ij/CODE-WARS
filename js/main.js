@@ -1,19 +1,32 @@
-// Removing Elements
+// Fundamentals: Return
 
-// Take an array and remove every second element from the array. Always keep the first element and start removing with the next element.
+// Make multiple functions that will return the sum, difference, modulus, product, quotient, and the exponent respectively.
 
-// Example:
+// Please use the following function names:
 
-// ["Keep", "Remove", "Keep", "Remove", "Keep", ...] --> ["Keep", "Keep", "Keep", ...]
+// addition = add
 
-// None of the arrays will be empty, so you don't have to worry about that!
+// multiply = multiply
+
+// division = divide (both integer and float divisions are accepted)
+
+// modulus = mod
+
+// exponential = exponent
+
+// subtraction = subt
+
+// Note: All math operations will be: a (operation) b
 
 // SOLUTION
-function removeEveryOther(arr){
-  //leave the first element in the array untouched
-  //remove every second element in the array
-      //filter through and return the even index elements
-    let mapped = arr.filter((x, i) => i % 2 === 0)
-    return mapped
-}
-console.log(removeEveryOther(['Hello', 'Goodbye', 'Hello Again']))
+let add = (a,b) => a + b
+
+let multiply = (a,b) => a * b
+
+let divide = (a,b) => a / b
+
+let mod = (a,b) => a % b
+
+let exponent = (a,b) => Math.pow(a, b)
+    
+let subt = (a,b) => a - b
