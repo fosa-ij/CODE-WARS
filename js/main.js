@@ -1,32 +1,19 @@
-// Fundamentals: Return
+// Sum of positive
 
-// Make multiple functions that will return the sum, difference, modulus, product, quotient, and the exponent respectively.
+// You get an array of numbers, return the sum of all of the positives ones.
 
-// Please use the following function names:
+// Example [1,-4,7,12] => 1 + 7 + 12 = 20
 
-// addition = add
-
-// multiply = multiply
-
-// division = divide (both integer and float divisions are accepted)
-
-// modulus = mod
-
-// exponential = exponent
-
-// subtraction = subt
-
-// Note: All math operations will be: a (operation) b
+// Note: if there is nothing to sum, the sum is default to 0
 
 // SOLUTION
-let add = (a,b) => a + b
-
-let multiply = (a,b) => a * b
-
-let divide = (a,b) => a / b
-
-let mod = (a,b) => a % b
-
-let exponent = (a,b) => Math.pow(a, b)
-    
-let subt = (a,b) => a - b
+function positiveSum(arr) {
+      //get the positive numbers out of the array
+      //then sum the numbers
+      let total = 0
+      arr.forEach((x) => {
+        return x > 0 ? total += x : total += 0
+      })
+      return total
+    }
+console.log(positiveSum([3, -2, 4]))
