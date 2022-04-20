@@ -1,19 +1,24 @@
-// Sum of positive
+// Find Maximum and Minimum Values of a List
 
-// You get an array of numbers, return the sum of all of the positives ones.
+// Your task is to make two functions (max and min, or maximum and minimum, etc., depending on the language) that receive a list of integers as input and return, respectively, the largest and lowest number in that list.
 
-// Example [1,-4,7,12] => 1 + 7 + 12 = 20
-
-// Note: if there is nothing to sum, the sum is default to 0
+// Examples (Input -> Output)
+// * [4,6,2,1,9,63,-134,566]         -> max = 566, min = -134
+// * [-52, 56, 30, 29, -54, 0, -110] -> min = -110, max = 56
+// * [42, 54, 65, 87, 0]             -> min = 0, max = 87
+// * [5]                             -> min = 5, max = 5
+// Notes
+// You may consider that there will not be any empty arrays/vectors.
 
 // SOLUTION
-function positiveSum(arr) {
-      //get the positive numbers out of the array
-      //then sum the numbers
-      let total = 0
-      arr.forEach((x) => {
-        return x > 0 ? total += x : total += 0
-      })
-      return total
-    }
-console.log(positiveSum([3, -2, 4]))
+var min = function(list){
+  //const arList = [89, 45, 8, 23, 7]
+  return Math.min(...list);
+}
+min([89, 45, 8, 23, 7])
+
+var max = function(list){
+ // const arList = [217, -45, 8, 32, 7]
+  return Math.max(...list);
+}
+max([217, -45, 8, 32, 7])
