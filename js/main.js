@@ -1,24 +1,9 @@
-// Find Maximum and Minimum Values of a List
+// Multiply
 
-// Your task is to make two functions (max and min, or maximum and minimum, etc., depending on the language) that receive a list of integers as input and return, respectively, the largest and lowest number in that list.
-
-// Examples (Input -> Output)
-// * [4,6,2,1,9,63,-134,566]         -> max = 566, min = -134
-// * [-52, 56, 30, 29, -54, 0, -110] -> min = -110, max = 56
-// * [42, 54, 65, 87, 0]             -> min = 0, max = 87
-// * [5]                             -> min = 5, max = 5
-// Notes
-// You may consider that there will not be any empty arrays/vectors.
+// This code does not execute properly. Try to figure out why.
 
 // SOLUTION
-var min = function(list){
-  //const arList = [89, 45, 8, 23, 7]
-  return Math.min(...list);
-}
-min([89, 45, 8, 23, 7])
-
-var max = function(list){
- // const arList = [217, -45, 8, 32, 7]
-  return Math.max(...list);
-}
-max([217, -45, 8, 32, 7])
+function multiply(a, b){
+  return a * b
+ }
+ console.log(multiply (3, 4))
