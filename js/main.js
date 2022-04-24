@@ -1,28 +1,30 @@
-<<<<<<< HEAD
-// Reversed Strings
+// Transportation on vacation
 
-// Complete the solution so that it reverses the string passed into it.
+// After a hard quarter in the office you decide to get some rest on a vacation. So you will book a flight for you and your girlfriend and try to leave all the mess behind you.
 
-// 'world'  =>  'dlrow'
-// 'word'   =>  'drow'
-// solution
-function solution(str){
-  let arrString =  str.split('')
-  console.log(arrString)
-  let reverseStr = arrString.reverse()
-  console.log(reverseStr)
-  let joinToString = reverseStr.join('')
-  return joinToString
-}
-console.log(solution('world'))
-=======
-// Multiply
+// You will need a rental car in order for you to get around in your vacation. The manager of the car rental makes you some good offers.
 
-// This code does not execute properly. Try to figure out why.
+// Every day you rent the car costs $40. If you rent the car for 7 or more days, you get $50 off your total. Alternatively, if you rent the car for 3 or more days, you get $20 off your total.
+
+// Write a code that gives out the total amount for different days(d).
 
 // SOLUTION
-function multiply(a, b){
-  return a * b
- }
- console.log(multiply (3, 4))
->>>>>>> fb269dfab55fc412f137c8b828e566ebfe8c8d5b
+function baseCost(days, rate) {
+  return days * rate;
+}
+
+function discountRate(days) {
+  if ( days >= 7 ) {
+    return 50;
+  }
+  else if ( days >= 3 ) {
+    return 20;
+  }
+  else {
+    return 0;
+  }
+}
+
+function rentalCarCost(days) {
+  return baseCost(days, 40) - discountRate(days);
+}
