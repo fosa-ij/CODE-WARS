@@ -1,24 +1,12 @@
-// Switch/Case - Bug Fixing #6
+//Given two integer arrays a, b, both of length >= 1, create a program that returns true if the sum of the squares of each element in a is strictly greater than the sum of the cubes of each element in b.
+let program = (a, b) => {
+  // let aTrans = a.map(x => Math.pow(x, 2)).reduce((acc, curr) => acc + curr, 0)
+  let aTrans = a.reduce((acc, curr) => acc + Math.pow(curr, 2), 0)
 
-// Switch/Case - Bug Fixing #6
-// Oh no! Timmy's evalObject function doesn't work. He uses Switch/Cases to evaluate the given properties of an object, can you fix timmy's function?
+  // let bTrans = b.map(x => Math.pow(x, 3)).reduce((acc, curr) => acc + curr, 0)
+  let bTrans = b.reduce((acc, curr) => acc + Math.pow(curr, 3), 0)
+  console.log(`aTrans: ${aTrans}, bTrans: ${bTrans}`)
+  return aTrans > bTrans
 
-// SOLUTION
-function evalObject(value){
-  var result = 0;
-  switch(value.operation){
-    case'+': result = value.a + value.b;
-      break
-    case'-': result = value.a - value.b;
-      break
-    case'/': result = value.a / value.b;
-      break
-    case'*': result = value.a * value.b;
-      break
-    case'%': result = value.a % value.b;
-      break
-    case'^': result = Math.pow(value.a, value.b);
-      break
-  }
-  return result;
 }
+console.log(program([-6, 32, 25], [-1, 10, 9]))
