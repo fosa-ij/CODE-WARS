@@ -1,12 +1,5 @@
-//Given two integer arrays a, b, both of length >= 1, create a program that returns true if the sum of the squares of each element in a is strictly greater than the sum of the cubes of each element in b.
-let program = (a, b) => {
-  // let aTrans = a.map(x => Math.pow(x, 2)).reduce((acc, curr) => acc + curr, 0)
-  let aTrans = a.reduce((acc, curr) => acc + Math.pow(curr, 2), 0)
-
-  // let bTrans = b.map(x => Math.pow(x, 3)).reduce((acc, curr) => acc + curr, 0)
-  let bTrans = b.reduce((acc, curr) => acc + Math.pow(curr, 3), 0)
-  console.log(`aTrans: ${aTrans}, bTrans: ${bTrans}`)
-  return aTrans > bTrans
-
+//Given an array of integers as strings and numbers, return the array with 200 as an integer in the 3rd and the 4th index
+let allNumbers = arr => {
+  return arr.map(x => Number(x)).fill(200, 3, 5)
 }
-console.log(program([-6, 32, 25], [-1, 10, 9]))
+console.log(allNumbers([22, '-6', 32, 82, '9', 25]))
