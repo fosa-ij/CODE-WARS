@@ -1,19 +1,19 @@
-// Classy Extentions
+// Classy Classes
 
-// Classy Extensions
-// Classy Extensions, this kata is mainly aimed at the new JS ES6 Update introducing extends keyword. You will be preloaded with the Animal class, so you should only edit the Cat class.
+// Classy Classes
+// Basic Classes, this kata is mainly aimed at the new JS ES6 Update introducing classes
+
 // Task
-// Your task is to complete the Cat class which Extends Animal and replace the speak method to return the cats name + meows. e.g. 'Mr Whiskers meows.'
-// The name attribute is passed with this.name (JS), @name (Ruby) or self.name (Python).
-
-// Reference: JS, Ruby, Python
+// Your task is to complete this Class, the Person class has been created. You must fill in the Constructor method to accept a name as string and an age as number, complete the get Info property and getInfo method/Info getter which should return johns age is 34
 
 // SOLUTION
-class Cat extends Animal {
-  speak(){
-    return `${this.name} meows.`
+class Person {
+  constructor(name, age) {
+    this.name = name 
+    this.age = age
+    this.info = `${this.name}s age is ${this.age}`
   }
 }
 
-let newCat = new Cat('$$Money Bags$$')
-console.log(newCat.speak())
+let efosa = new Person('efosa', 20,)
+console.log(efosa.info)
