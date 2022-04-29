@@ -1,5 +1,19 @@
-//Given an array of integers as strings and numbers, return the array with 200 as an integer in the 3rd and the 4th index
-let allNumbers = arr => {
-  return arr.map(x => Number(x)).fill(200, 3, 5)
+// Classy Extentions
+
+// Classy Extensions
+// Classy Extensions, this kata is mainly aimed at the new JS ES6 Update introducing extends keyword. You will be preloaded with the Animal class, so you should only edit the Cat class.
+// Task
+// Your task is to complete the Cat class which Extends Animal and replace the speak method to return the cats name + meows. e.g. 'Mr Whiskers meows.'
+// The name attribute is passed with this.name (JS), @name (Ruby) or self.name (Python).
+
+// Reference: JS, Ruby, Python
+
+// SOLUTION
+class Cat extends Animal {
+  speak(){
+    return `${this.name} meows.`
+  }
 }
-console.log(allNumbers([22, '-6', 32, 82, '9', 25]))
+
+let newCat = new Cat('$$Money Bags$$')
+console.log(newCat.speak())
