@@ -1,19 +1,21 @@
-// Classy Classes
+// Regular Ball Super Ball
 
-// Classy Classes
-// Basic Classes, this kata is mainly aimed at the new JS ES6 Update introducing classes
+// Create a class Ball. Ball objects should accept one argument for "ball type" when instantiated.
+// If no arguments are given, ball objects should instantiate with a "ball type" of "regular."
 
-// Task
-// Your task is to complete this Class, the Person class has been created. You must fill in the Constructor method to accept a name as string and an age as number, complete the get Info property and getInfo method/Info getter which should return johns age is 34
+// ball1 = new Ball();
+// ball2 = new Ball("super");
+
+// ball1.ballType     //=> "regular"
+// ball2.ballType     //=> "super"
 
 // SOLUTION
-class Person {
-  constructor(name, age) {
-    this.name = name 
-    this.age = age
-    this.info = `${this.name}s age is ${this.age}`
+class Ball {
+  constructor(ballType = 'regular'){
+    this.ballType = ballType
   }
 }
-
-let efosa = new Person('efosa', 20,)
-console.log(efosa.info)
+let ball1 = new Ball();
+let ball2 = new Ball('super');
+console.log(ball1.ballType)
+console.log(ball2.ballType)
