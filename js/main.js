@@ -1,21 +1,14 @@
-// Enumerable Magic #1 - True for All?
+// Sort and Star
 
-// Task
-// Create a method all which takes two params:
+// You will be given a vector of strings. You must sort it alphabetically (case-sensitive, and based on the ASCII values of the chars) and then return the first value.
 
-// a sequence
-// a function (function pointer in C)
-// and returns true if the function in the params returns true for every element in the sequence. Otherwise, it should return false. If the sequence is empty, it should return true, since technically nothing failed the test.
+// The returned value must be a string, and have "***" between each of its letters.
 
-// Example
-// all((1, 2, 3, 4, 5), greater_than_9) -> false
-// all((1, 2, 3, 4, 5), less_than_9)    -> True
+// You should not remove or add elements from/to the array
 
 // SOLUTION
-function all(arr, func){
-  //if the filtered array is equal in length to the original array return true
-  let filtered = arr.filter(func)
-  if (!arr) return true
-  return filtered.length === arr.length
+function twoSort(s) {
+  return s.sort()[0].split('').join('***')
 }
-console.log(all([1,2,3,4,5], function(v){return v > 9}))
+console.log(twoSort(["turns", "out", "random", "test", "cases", "are", "easier", "than", "writing", "out", "basic", "ones"]))
+console.log(twoSort(["BTC","Bitcoin","Dogecoin","Ethereum","Factom","Lisk","Mine","Mine","Monero","Monero","ProofOfStake"]))
