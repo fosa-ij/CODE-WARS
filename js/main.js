@@ -1,10 +1,24 @@
-// Is it a palindrome?
+// Sum of Multiples
 
-// Write a function that checks if a given string (case insensitive) is a palindrome.
+// Your Job
+// Find the sum of all multiples of n below m
+
+// Keep in Mind
+// n and m are natural numbers (positive integers)
+// m is excluded from the multiples
+// Examples
+// sumMul(2, 9)   ==> 2 + 4 + 6 + 8 = 20
+// sumMul(3, 13)  ==> 3 + 6 + 9 + 12 = 30
+// sumMul(4, 123) ==> 4 + 8 + 12 + ... = 1860
+// sumMul(4, -7)  ==> "INVALID"
 
 // SOLUTION
-function isPalindrome(x) {
-  // your code here
-  let xL = x.toLowerCase();
-  return xL === xL.split('').reverse().join('')
-}
+function sumMul(n,m){
+  //your idea here
+    let arr = [];
+    if (m <= n) return 'INVALID'
+    for (let i = n; i < m; i += n){
+          arr.push(i)
+    }
+    return arr.reduce((acc, cur) => acc + cur, 0)
+  }
