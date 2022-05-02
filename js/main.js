@@ -1,14 +1,13 @@
-// Sort and Star
+// Opposites Attract
 
-// You will be given a vector of strings. You must sort it alphabetically (case-sensitive, and based on the ASCII values of the chars) and then return the first value.
+// Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a flower each. If one of the flowers has an even number of petals and the other has an odd number of petals it means they are in love.
 
-// The returned value must be a string, and have "***" between each of its letters.
-
-// You should not remove or add elements from/to the array
+// Write a function that will take the number of petals of each flower and return true if they are in love and false if they aren't
 
 // SOLUTION
-function twoSort(s) {
-  return s.sort()[0].split('').join('***')
-}
-console.log(twoSort(["turns", "out", "random", "test", "cases", "are", "easier", "than", "writing", "out", "basic", "ones"]))
-console.log(twoSort(["BTC","Bitcoin","Dogecoin","Ethereum","Factom","Lisk","Mine","Mine","Monero","Monero","ProofOfStake"]))
+function lovefunc(flower1, flower2){
+  // moment of truth
+    // return !(flower1 % 2 == 0 && flower2 % 2 == 0 || flower1 % 2 != 0 && flower2 % 2 != 0)
+    return flower1 % 2 !== flower2 % 2
+  }
+console.log(lovefunc(1,4))
