@@ -1,24 +1,42 @@
-// Sum of Multiples
+// SpeedCode #3 × Fun with ES6 Classes #5 - Dogs and Classes
 
-// Your Job
-// Find the sum of all multiples of n below m
+// SpeedCode #3 × Fun with ES6 Classes #5 - Dogs and Classes
+// Objective
+// Preloaded for you is a class Dog:
 
-// Keep in Mind
-// n and m are natural numbers (positive integers)
-// m is excluded from the multiples
-// Examples
-// sumMul(2, 9)   ==> 2 + 4 + 6 + 8 = 20
-// sumMul(3, 13)  ==> 3 + 6 + 9 + 12 = 30
-// sumMul(4, 123) ==> 4 + 8 + 12 + ... = 1860
-// sumMul(4, -7)  ==> "INVALID"
+// class Dog {
+//   constructor(name, age, gender, species, size, master, loyal) {
+//     this.name = name;
+//     this.age = age;
+//     this.gender = gender;
+//     this.species = species;
+//     this.legs = 4;
+//     this.size = size;
+//     this.master = master;
+//     this.loyal = loyal;
+//   }
+// }
+// You are then given a working class Labrador as your initial code.
+
+// class Labrador {
+//   constructor(name, age, gender, master) {
+//     this.name = name;
+//     this.age = age;
+//     this.gender = gender;
+//     this.species = "Labrador";
+//     this.legs = 4;
+//     this.size = "Large";
+//     this.master = master;
+//     this.loyal = true;
+//   }
+// }
+// Shorten it so that it meets the strict character count requirements for this Kata.
+
+// Quick, get your timer out and get ready to time yourself. Are you ready? Ready, get set, GO!!! :D
 
 // SOLUTION
-function sumMul(n,m){
-  //your idea here
-    let arr = [];
-    if (m <= n) return 'INVALID'
-    for (let i = n; i < m; i += n){
-          arr.push(i)
-    }
-    return arr.reduce((acc, cur) => acc + cur, 0)
+class Labrador extends Dog {
+  constructor(name, age, gender, master) {
+    super(name, age, gender, 'Labrador', 'Large', master, true)
   }
+}
