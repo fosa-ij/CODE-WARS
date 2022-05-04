@@ -1,42 +1,44 @@
-// SpeedCode #3 × Fun with ES6 Classes #5 - Dogs and Classes
+// Object Oriented Piracy
 
-// SpeedCode #3 × Fun with ES6 Classes #5 - Dogs and Classes
-// Objective
-// Preloaded for you is a class Dog:
+// Ahoy matey!
 
-// class Dog {
-//   constructor(name, age, gender, species, size, master, loyal) {
-//     this.name = name;
-//     this.age = age;
-//     this.gender = gender;
-//     this.species = species;
-//     this.legs = 4;
-//     this.size = size;
-//     this.master = master;
-//     this.loyal = loyal;
-//   }
+// You are a leader of a small pirate crew. And you have a plan. With the help of OOP you wish to make a pretty efficient system to identify ships with a heavy booty on board.
+
+// Unfortunattely for you, people weigh a lot this days, so how do you know if a ship if full of gold and not people?
+
+// You begin with writing a generic Ship class:
+
+// function Ship(draft,crew) {
+//  this.draft = draft;
+//  this.crew = crew;
 // }
-// You are then given a working class Labrador as your initial code.
+// Every time your spies see a new ship enter the dock, they will create a new ship object based on their observations:
 
-// class Labrador {
-//   constructor(name, age, gender, master) {
-//     this.name = name;
-//     this.age = age;
-//     this.gender = gender;
-//     this.species = "Labrador";
-//     this.legs = 4;
-//     this.size = "Large";
-//     this.master = master;
-//     this.loyal = true;
-//   }
-// }
-// Shorten it so that it meets the strict character count requirements for this Kata.
+// draft - an estimate of the ship's weight based on how low it is in the water
+// crew - the count of crew on board
+// var titanic = new Ship(15, 10);
+// Taking into account that an average crew member on board adds 1.5 units to the draft, a ship that has a draft of more than 20 without crew is considered worthy to loot. Any ship weighing that much must have a lot of booty!
 
-// Quick, get your timer out and get ready to time yourself. Are you ready? Ready, get set, GO!!! :D
+// Add the method
+
+// isWorthIt
+// to decide if the ship is worthy to loot. For example:
+
+// titanic.isWorthIt() // return false
+// This Kata teaches you the very basic of method creation.
+
+// Good luck!
 
 // SOLUTION
-class Labrador extends Dog {
-  constructor(name, age, gender, master) {
-    super(name, age, gender, 'Labrador', 'Large', master, true)
-  }
-}
+function Ship(draft,crew) {
+  this.draft = draft;
+  this.crew = crew;
+ }
+ 
+ //YOUR CODE HERE...
+ Ship.prototype.isWorthIt = function(){
+   return this.draft - (this.crew * 1.5) > 20
+ }
+ 
+ let titanic = new Ship(15, 10)
+ console.log(titanic.isWorthIt())
