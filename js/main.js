@@ -1,44 +1,31 @@
-// Object Oriented Piracy
+// Holiday VI - Shark Pontoon
 
-// Ahoy matey!
+// Your friend invites you out to a cool floating pontoon around 1km off the beach. Among other things, the pontoon has a huge slide that drops you out right into the ocean, a small way from a set of stairs used to climb out.
 
-// You are a leader of a small pirate crew. And you have a plan. With the help of OOP you wish to make a pretty efficient system to identify ships with a heavy booty on board.
+// As you plunge out of the slide into the water, you see a shark hovering in the darkness under the pontoon... Crap!
 
-// Unfortunattely for you, people weigh a lot this days, so how do you know if a ship if full of gold and not people?
+// You need to work out if the shark will get to you before you can get to the pontoon. To make it easier... as you do the mental calculations in the water you either freeze when you realise you are dead, or swim when you realise you can make it!
 
-// You begin with writing a generic Ship class:
+// You are given 5 variables;
 
-// function Ship(draft,crew) {
-//  this.draft = draft;
-//  this.crew = crew;
-// }
-// Every time your spies see a new ship enter the dock, they will create a new ship object based on their observations:
+// sharkDistance = distance from the shark to the pontoon. The shark will eat you if it reaches you before you escape to the pontoon.
 
-// draft - an estimate of the ship's weight based on how low it is in the water
-// crew - the count of crew on board
-// var titanic = new Ship(15, 10);
-// Taking into account that an average crew member on board adds 1.5 units to the draft, a ship that has a draft of more than 20 without crew is considered worthy to loot. Any ship weighing that much must have a lot of booty!
+// sharkSpeed = how fast it can move in metres/second.
 
-// Add the method
+// pontoonDistance = how far you need to swim to safety in metres.
 
-// isWorthIt
-// to decide if the ship is worthy to loot. For example:
+// youSpeed = how fast you can swim in metres/second.
 
-// titanic.isWorthIt() // return false
-// This Kata teaches you the very basic of method creation.
+// dolphin = a boolean, if true, you can half the swimming speed of the shark as the dolphin will attack it.
 
-// Good luck!
+// The pontoon, you, and the shark are all aligned in one dimension.
+
+// If you make it, return "Alive!", if not, return "Shark Bait!".
 
 // SOLUTION
-function Ship(draft,crew) {
-  this.draft = draft;
-  this.crew = crew;
- }
- 
- //YOUR CODE HERE...
- Ship.prototype.isWorthIt = function(){
-   return this.draft - (this.crew * 1.5) > 20
- }
- 
- let titanic = new Ship(15, 10)
- console.log(titanic.isWorthIt())
+function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin){
+  if (dolphin){
+    return (pontoonDistance / youSpeed) < (sharkDistance / (sharkSpeed / 2)) ? 'Alive!' : 'Shark Bait!'
+  } else return (pontoonDistance / youSpeed) < (sharkDistance / sharkSpeed) ? 'Alive!' : 'Shark Bait!'
+}
+console.log(shark(7, 55, 4, 16, true))
