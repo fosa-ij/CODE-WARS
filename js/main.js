@@ -1,29 +1,13 @@
-// CSV representation of array
+// Plural
 
-// Create a function that returns the CSV representation of a two-dimensional numeric array.
+// We need a simple function that determines if a plural is needed or not. It should take a number, and return true if a plural should be used with that number or false if not. This would be useful when printing out a string such as 5 minutes, 14 apples, or 1 sun.
 
-// Example:
+// You only need to worry about english grammar rules for this kata, where anything that isn't singular (one of something), it is plural (not one of something).
 
-// input:
-//    [[ 0, 1, 2, 3, 4 ],
-//     [ 10,11,12,13,14 ],
-//     [ 20,21,22,23,24 ],
-//     [ 30,31,32,33,34 ]] 
-    
-// output:
-//      '0,1,2,3,4\n'
-//     +'10,11,12,13,14\n'
-//     +'20,21,22,23,24\n'
-//     +'30,31,32,33,34'
-// Array's length > 2.
+// All values will be positive integers or floats, or zero.
 
 // SOLUTION
-function toCsvText(array) {
-  // good luck
- return array.join('\n')
- 
+function plural(n) {
+  // ...
+  return n != 1
 }
-console.log(toCsvText([[ 0, 1, 2, 3, 45 ],
-                      [ 10,11,12,13,14 ],
-                      [ 20,21,22,23,24 ],
-                      [ 30,31,32,33,34 ]]))
