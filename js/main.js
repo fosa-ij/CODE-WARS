@@ -1,29 +1,12 @@
-// CSV representation of array
+// Capitalization and Mutability
 
-// Create a function that returns the CSV representation of a two-dimensional numeric array.
+// Your coworker was supposed to write a simple helper function to capitalize a string (that contains a single word) before they went on vacation.
 
-// Example:
+// Unfortunately, they have now left and the code they gave you doesn't work. Fix the helper function they wrote so that it works as intended (i.e. make the first character in the string "word" upper case).
 
-// input:
-//    [[ 0, 1, 2, 3, 4 ],
-//     [ 10,11,12,13,14 ],
-//     [ 20,21,22,23,24 ],
-//     [ 30,31,32,33,34 ]] 
-    
-// output:
-//      '0,1,2,3,4\n'
-//     +'10,11,12,13,14\n'
-//     +'20,21,22,23,24\n'
-//     +'30,31,32,33,34'
-// Array's length > 2.
+// Don't worry about numbers, special characters, or non-string types being passed to the function. The string lengths will be from 1 character up to 10 characters, but will never be empty.
 
 // SOLUTION
-function toCsvText(array) {
-  // good luck
- return array.join('\n')
- 
+function capitalizeWord(word) {
+  return word.split('').map((x, i) => i === 0 ? x.toUpperCase() : x).join('')
 }
-console.log(toCsvText([[ 0, 1, 2, 3, 45 ],
-                      [ 10,11,12,13,14 ],
-                      [ 20,21,22,23,24 ],
-                      [ 30,31,32,33,34 ]]))
