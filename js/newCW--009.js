@@ -42,3 +42,4 @@ let getDrinkByProfession = string => {
       return statement
 }
 console.log(getDrinkByProfession( "Bike Gang Member"))
+console.log(getDrinkByProfession( "rapper"))
