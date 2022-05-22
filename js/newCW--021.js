@@ -51,4 +51,4 @@ function logicalCalc(array, op){
 }
 console.log(logicalCalc([true, true, true], 'AND'));
 console.log(logicalCalc([true, true, false], 'OR'));
-console.log(logicalCalc([true, true, false], 'XOR'));
+console.log(logicalCalc([true, true, false, true], 'XOR'));
