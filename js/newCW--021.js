@@ -49,6 +49,6 @@ function logicalCalc(array, op){
     })
     return mapped
 }
-console.log(logicalCalc([true, true, true], 'AND'));
+console.log(logicalCalc([true, true, true, false], 'AND'));
 console.log(logicalCalc([true, true, false], 'OR'));
 console.log(logicalCalc([true, true, false, true], 'XOR'));
