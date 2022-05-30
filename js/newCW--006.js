@@ -11,34 +11,30 @@
 // All letters will be lowercase and all inputs will be valid.
 
 // SOLUTION
-function high(str){
-      let alphabet = {
-            'a': 1, 
-            'b': 2, 
-            'c': 3, 
-            'd': 4,
-            'e': 5,
-            'f': 6,
-            'g': 7,
-            'h': 8,
-            'i': 9, 
-            'j': 10,
-            'k': 11,
-            'l': 12,
-            'm': 13,
-            'n': 14,
-            'o': 15,
-            'p': 16, 
-            'q': 17,
-            'r': 18,
-            's': 19,
-            't': 20,
-            'u': 21,
-            'v': 22,
-            'w': 23,
-            'x': 24,
-            'y': 25,
-            'z': 26
-      }
+// P: one parameter (a string of words)
 
+// R: retrun (a string) which is the highest scoring word
+
+// E: high('man i need a taxi up to ubud'), 'taxi'), || high('aa b'), 'aa'), || high('what time are we climbing up the volcano'), 'volcano')
+
+// P: store all the alphabets as a string in a variable, 
+      // convert the string to an array so as to treat each string seperately by converting again each item to an array 
+      // map through the item, returning the position of each letter on the alphabetNum using indexOf, and reduce to a single number 
+      // then use the Math.max method to get the highest number in the finally mapped array of highest words and get the index of the number in the array 
+      // and return the originally splitted value of the string with that index as in arr[the num]
+
+function high(str){
+      const alphabetNum = '-abcdefghijklmnopqrstuvwxyz'
+      const strToArr = str.split(' ')
+      let mapped1 = strToArr.map((x, i) => x.split(''))
+      let finalMap = mapped1.map((x, i) => {
+            return x.map(x => alphabetNum.indexOf(x)).reduce((acc, curr) => acc + curr, 0)
+      })
+      console.log(strToArr);
+      console.log(finalMap);
+      const indexOfHighestWord = finalMap.indexOf(Math.max(...finalMap))
+      return strToArr[indexOfHighestWord]
 }
+console.log(high('man i need a taxi up to ubud'));
+console.log(high('aa b'));
+console.log(high('what time are we climbing up the volcano'));
