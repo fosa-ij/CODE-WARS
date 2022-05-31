@@ -30,6 +30,9 @@ function amountOfPages(summary){
             arrOfPages.push(i)
         }
     }
+    // console.log( arrOfPages );
+    // console.log(pages);
+    // console.log(pages.length);
     return arrOfPages.pop()
 }
 console.log(amountOfPages(25));
