@@ -21,4 +21,15 @@ SOLUTION */
 
 function duckDuckGoose(players, goose) {
     // ...
+    let newP = ''
+    for (let i = 0; i < goose; i++){
+        let j = i % players.length
+        newP = players[j].name
+    }
+    return newP
 }
+console.log( duckDuckGoose(["a", "b", "c", "d"], 4) );
+console.log( duckDuckGoose(["a", "b", "c", "d"], 5) );
+console.log( duckDuckGoose(["a", "b", "c", "d"], 8) );
+console.log( duckDuckGoose(["a", "b", "c", "d"], 9) );
+console.log( duckDuckGoose(["a", "b", "c", "d"], 21) );
