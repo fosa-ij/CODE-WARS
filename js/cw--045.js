@@ -1,3 +1,5 @@
+// BLAW BLAW BLAW - coding exercise with prep
+
 // given array of numbers, return (number + 10) if number is < 10, 
 // return (number + 3) / 4 if (number + 3) is divisible by 4
 // return number / 2 if number is even
