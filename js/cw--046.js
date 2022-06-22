@@ -17,12 +17,16 @@ function sevenAte9(str) {
     let arr = str.split("")
     // let x = arr.indexOf('9')
     arr.forEach((x, i) => {
-        if (x == '9' && ((i -1) == '7' && (i +1) == '7')){
-            arr.splice(i, 1)
+        if (x == '9'){
+            if ((arr[i -1]) == '7' && (arr[i +1]) == '7'){
+                arr.splice(i, 1)
+            }
+        } else {
+            return x
         }
         return arr
     })
-    // let newStr = arr.join("")
-    return arr
+    let newStr = arr.join("")
+    return newStr
 }
-console.log(sevenAte9("79712312"));
+console.log(sevenAte9("165561786121789797"));
