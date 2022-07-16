@@ -1,4 +1,4 @@
-// You're a square!
+// You're a square! 
 
 // Task
 // Given an integral number, determine if it's a square number:
