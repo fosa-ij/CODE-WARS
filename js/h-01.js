@@ -59,4 +59,5 @@ const test = new ReplaceChar().replaceChar(
 );
 console.log(test);
 
-// how to check if a string is truly a string?
+
+
