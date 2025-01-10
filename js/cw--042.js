@@ -18,10 +18,10 @@ SOLUTION */
 
 // P : first of all find a way to check if a number is odd or even(using the modulo symbol) and pass them into thier various functions
 function convertToBinary(num){
-    return (num >>> 0).toString(2);
+    return (num >>> 0).toString(2); // add to ANKI
 }
 function convertToHexadecimal(num){
-    return num.toString(16);
+    return num.toString(16); // add to ANKI
 }
 
 function evensAndOdds(number){

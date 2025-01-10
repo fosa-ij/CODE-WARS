@@ -8,4 +8,4 @@ class Kata {
       return length * width * height
     }
 }
-console.log(Kata(3, 4, 5));
+// console.log(Kata(3, 4, 5));

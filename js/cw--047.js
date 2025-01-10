@@ -18,5 +18,12 @@ SOLUTION */
 
 
 const factorial = n => {
-    return 0;
+    if (n <= 1){
+        return 1
+    } else {
+        console.log(n);
+        return n * factorial(n -1)
+    }
 };
+let result = factorial(5)
+console.log(result);

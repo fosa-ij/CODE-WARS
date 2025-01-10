@@ -27,15 +27,20 @@ function solve(a, b) {
     for (let i = a; i < b; i++){
         let sqr = Math.pow(i, 2)
         let c = Number(i.toString().split('')[0] + i.toString().split('')[1])
-        console.log( c );
+        // console.log( c );
+
         for (let j = 2; j <= c; j++){
             if (c % j === 0){
                 let d = Number(sqr.toString().split('')[0] + sqr.toString().split('')[1])
+                // console.log(j);
+
                 for (let k = 2; k <= d; k++){
-                    return (d % k === 0) ? matchedCondition++ : matchedCondition += 0
+                    // console.log(k);
+                    (d % k === 0) && (c % j === 0) ? matchedCondition++ : matchedCondition += 0
                 }
-            } else false
+            } else break
         }
+        console.log(i);
     }
     return matchedCondition 
     // let firstTwoNum = Number(a.toString().split('')[0] + a.toString().split('')[1])

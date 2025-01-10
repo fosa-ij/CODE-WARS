@@ -20,5 +20,8 @@ function flattenAndSort(array) {
   })
   console.log(realArr);
   return realArr.sort((a, b) => a - b);
+
+//   let emptyArray = [];
+//   console.log(emptyArray.concat(array).sort((a, b) => a - b));
 }
 console.log(flattenAndSort([[3, 2, 1], [7, 9, 8]]))

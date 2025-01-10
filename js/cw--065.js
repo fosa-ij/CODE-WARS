@@ -17,6 +17,6 @@ function createPhoneNumber(numbers){
     let fThree = numbers.slice(0, 3)
     let sThree = numbers.slice(3, 6)
     let lThree = numbers.slice(6)
-    return `(${fThree.join('')}), ${sThree.join('')}-${lThree.join('')}`
+    return `(${fThree.join('')}) ${sThree.join('')}-${lThree.join('')}`
 }
 console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));

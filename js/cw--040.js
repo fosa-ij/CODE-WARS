@@ -2,7 +2,6 @@
 
 Task
 Given an array of integers , Find the minimum sum which is obtained from summing each Two integers product .
-
 Notes
 Array/list will contain positives only .
 Array/list will always has even size
@@ -22,16 +21,20 @@ The minimum sum obtained from summing each two integers product , 9*0 + 8*2 +7*4
 
 SOLUTION */
 // P : one array of even length and only integers
-
 // R : single number
-
 // E : minSum([5,4,2,3]), 22); || minSum([12,6,10,26,3,24]), 342);
 
-// P : sort the array in an ascending order and find a way to multiply the relative largest and smallest numbers in the array and reduce the array to a single number
+// P : so firstly i have to sort the array in ascending order || then loop through the array and multiply the first element with the last element and so on and so fort, then return the value
 
 
 function minSum(arr) {
     // your code here
-    return arr.sort((a, b) => b - a).map((x, i) => x * x[-i -1]).reduce((acc, cur) => acc + cur, 0)
+    arr.sort((a, b) => a - b)
+    const mapped = arr.map((x, i, array) => x * array[array.length -i -1])
+    const rmvDup = [...new Set(mapped)]
+    const minimumSum = rmvDup.reduce((acc, curr) => acc + curr, 0)
+    return minimumSum
 }
 console.log(minSum([5,4,2,3]))
+console.log(minSum([12,6,10,26,3,24]))
+console.log(minSum([9,2,8,7,5,4,0,6]))
